@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="sportCenter.UpdateUserMembership"
+             xmlns:viewModels="clr-namespace:sportCenter.ViewModel;assembly=sportCenter"
+             x:DataType="viewModels:UserViewModel"
+             Title="UpdateUserMembership">
+
+
+    <StackLayout Padding="16" VerticalOptions="CenterAndExpand">
+
+        <StackLayout Orientation="Horizontal"  Spacing="20">
+            <Label Text="Full Name:" VerticalOptions="Center" FontSize="Title" />
+            <Label x:Name="name" Text="{Binding SelectedUser.FullName}" VerticalOptions="CenterAndExpand" FontSize="Large" />
+        </StackLayout>
+
+
+        <StackLayout Orientation="Horizontal"  Spacing="20">
+            <Label Text="Date of Birth:" VerticalOptions="Center" FontSize="Title" />
+            <Label Text="{Binding SelectedUser.DateOfBirth, StringFormat='{0:MM/dd/yyyy}'}" VerticalOptions="CenterAndExpand" FontSize="Large" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal"  Spacing="60">
+            <Label Text="Gender:" VerticalOptions="Center" FontSize="Title" />
+            <Label Text="{Binding SelectedUser.Gender}" VerticalOptions="CenterAndExpand" FontSize="Large" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal"  Spacing="20">
+            <Label Text="Is Member:" VerticalOptions="Center" FontSize="Title" />
+            <CheckBox x:Name="chkIsMember" IsChecked="{Binding SelectedUser.IsMember}" ClassId="{Binding SelectedUser.UserCode}" VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+        <!-- Add more properties as needed -->
+
+        <!-- Spacer to push the button to the bottom -->
+        <BoxView HeightRequest="0" />
+
+        <Button Text="Update Membership" Clicked="UpdateMembership_Click" Margin="0, 16, 0, 0" VerticalOptions="EndAndExpand" FontSize="Large" />
+    </StackLayout>
+</ContentPage>
