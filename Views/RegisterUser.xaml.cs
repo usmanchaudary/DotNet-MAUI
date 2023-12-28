@@ -42,6 +42,8 @@ namespace sportCenter
 
             // Display a success message to the user
             await DisplayAlert("Success", "User registered", "OK");
+            //navigate to the main page
+            await Shell.Current.GoToAsync("..");
         }
     }
 }
