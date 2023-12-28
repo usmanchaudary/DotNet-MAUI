@@ -64,13 +64,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="AllUsers.xaml">
+	  <MauiXaml Update="Views\AllUsers.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="RegisterUser.xaml">
+	  <MauiXaml Update="Views\RegisterUser.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="UpdateUserMembership.xaml">
+	  <MauiXaml Update="Views\UpdateUserMembership.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
