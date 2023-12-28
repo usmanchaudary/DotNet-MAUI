@@ -7,36 +7,41 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
+
             <Image
                 Source="dotnet_bot.png"
-                HeightRequest="185"
+                HeightRequest="100"
                 Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                SemanticProperties.Description="Sports Center Logo" />
 
-            <Label
-                Text="Hello, World!"
+                <Label
+                Text="Welcome to sportsCenter!"
                 Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+                SemanticProperties.HeadingLevel="Level1"
+                HorizontalOptions="CenterAndExpand" />
 
-            <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
+                <Label
+                Text=".NET Multi-platform App UI"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+                SemanticProperties.Description="Welcome to .NET Multi-platform App UI"
+                HorizontalOptions="CenterAndExpand" />
 
-            <Button
+                <Button
                 x:Name="ViewUsersBtn"
                 Text="View Users" 
-                SemanticProperties.Hint="Counts the number of times you click"
+                SemanticProperties.Hint="Navigate to view users page"
                 Clicked="ViewUsers_Clicked"
-                HorizontalOptions="Fill" />
-            
-            <Button
-                x:Name="RegitserUserBtn"
+                HorizontalOptions="FillAndExpand" />
+
+                <Button
+                x:Name="RegisterUserBtn"
                 Text="Register User" 
-                SemanticProperties.Hint="Counts the number of times you click"
+                SemanticProperties.Hint="Navigate to register user page"
                 Clicked="RegitserUserBtn_Clicked"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="FillAndExpand" />
 
         </VerticalStackLayout>
     </ScrollView>
