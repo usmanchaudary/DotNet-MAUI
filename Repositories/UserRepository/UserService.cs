@@ -75,7 +75,7 @@ namespace sportCenter.Repositories.UserRepository
             return Database.Table<User>().Where(x => x.Gender.ToString() == gender).ToList();
         }
         //GetUsersByMemberAsync
-        public async Task<List<User>> GetUsersByMember(bool isMember)
+        public async Task<List<User>> GetUsersByMembership(bool isMember)
         {
             await Init();
             var set = Database.Table<User>();

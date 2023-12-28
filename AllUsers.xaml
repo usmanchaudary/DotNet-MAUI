@@ -10,7 +10,7 @@
     <Grid RowDefinitions="Auto,*,Auto">
 
         <Label Text="Member Filter"  />
-        <Picker x:Name="isMember" Grid.Row="0" VerticalOptions="Fill"  Margin="10" SelectedItem="All Users">
+        <Picker x:Name="isMember" SelectedIndexChanged="isMember_SelectedIndexChanged"  Grid.Row="0" VerticalOptions="Fill"  Margin="10" SelectedItem="All Users">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>All Users</x:String>

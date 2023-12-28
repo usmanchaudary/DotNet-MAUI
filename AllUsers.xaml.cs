@@ -1,3 +1,4 @@
+using sportCenter.Enums;
 using sportCenter.Models;
 using sportCenter.Repositories.UserRepository;
 using System.Collections.ObjectModel;
@@ -63,5 +64,33 @@ public partial class AllUsers : ContentPage
     private void OnItemAdded(object sender, EventArgs e)
     {
         Shell.Current.GoToAsync(nameof(RegisterUser));
+    }
+
+    private async void isMember_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        //get selected item
+        var picker = (Picker)sender;
+        //get the selected item
+        var selectedItem = picker.SelectedItem;
+        //cast the selected item to a UserGender enum
+        
+        if (selectedItem != null)
+        {
+            switch (selectedItem.ToString())
+            {
+                case "All Users":
+                    UsersList = new ObservableCollection<User>(await _userService.GetUsersAsync());
+                    break;
+                case "Members":
+                    UsersList = new ObservableCollection<User>(await _userService.GetUsersByMembership(true));
+                    break;
+                case "Non-Members":
+                    UsersList = new ObservableCollection<User>(await _userService.GetUsersByMembership(false));
+                    break;
+                default:
+                    break;
+            }
+            cvUsers.ItemsSource = UsersList;
+        }
     }
 }
